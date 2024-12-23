@@ -13,13 +13,13 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      'semi': [
+      "semi": [
         2,
-        'always'
+        "always"
       ],
-      'quotes': [
-        'error',
-        'double'
+      "quotes": [
+        "error",
+        "double"
       ],
     },
   },
