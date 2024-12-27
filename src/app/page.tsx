@@ -58,7 +58,7 @@ const courses = [
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
-      <div className="min-[910px]:max-w-[910]">
+      <div className="max-w-full min-[910px]:max-w-[910]">
         <Section title="Cursos em destaque" variant="h-list" items={courses}/>
       </div>
     </main>

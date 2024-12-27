@@ -14,7 +14,8 @@ export default function Section({title, variant, items}: ISectionProps){
                 data-variant={variant}
                 className=" w-full grid gap-2 grid-cols-1 sm:grid-cols-none 
                     data-[variant=grid]:sm:grid-cols-2
-                    data-[variant=grid]:md:grid-cols-3
+                    data-[variant=grid]:md:grid-cols-2
+                    data-[variant=grid]:lg:grid-cols-3
                     data-[variant=h-list]:sm:grid-flow-col
                     data-[variant=h-list]:sm:overflow-x-auto"
                     

@@ -58,7 +58,7 @@ export default function CursosPage() {
 
     return (
         <main className="flex flex-col items-center">
-            <div className="min-[910px]:max-w-[910]">
+            <div className="max-w-full min-[910px]:max-w-[910]">
                 <Section title="Todos os cursos" variant="grid" items={courses}/>
             </div>
         </main>
