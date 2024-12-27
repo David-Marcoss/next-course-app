@@ -24,8 +24,8 @@ export default function Header(){
                     <button className="block sm:hidden" onClick={() => setIsDrawerOpen(true)}>
                         <MdMenu size={30}/>
                     </button>
-                    <li className="border-2 rounded-md p-1">
-                        <Link href="/" className="no-underline">CODANDO</Link>
+                    <li className="border-2 rounded-md p-1 ">
+                        <Link href="/" className="hover:no-underline">CODANDO</Link>
                     </li>
                     <li className="hidden sm:block">
                         <Link href="/" className={currentPath === "/" ? "underline" : ""}>Página Inicial</Link>
