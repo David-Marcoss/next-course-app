@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface ICardProps {
+export interface ICardProps {
     title: string,
     description: string,
     imageUrl: string,
@@ -13,7 +13,7 @@ export default function Card({title,description,courseUrl,imageUrl}: ICardProps)
     return (
         <Link href={courseUrl} className="hover:no-underline">
             <article
-                className="flex flex-col box-border w-auto h-auto sm:w-72 sm:h-80 gap-2 sm:hover:bg-primary p-2 rounded-sm"
+                className="flex flex-col w-auto h-auto sm:w-72 sm:h-80 gap-2 sm:hover:bg-primary p-2 rounded-sm"
             >
                 <Image
                     className="rounded-md aspect-video object-cover"
