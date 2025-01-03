@@ -7,7 +7,7 @@ import CopyContent from "./components/CopyContent";
 export default function CourseHeader({title,description}: ICardProps ){
 
     return (
-        <div className="px-4 my-6">
+        <div>
             <div className="flex flex-col gap-4">
                 <h1 className="text-xl font-extrabold">{title}</h1>
                 

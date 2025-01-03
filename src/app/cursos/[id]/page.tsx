@@ -1,4 +1,5 @@
-import CourseHeader from "@/components/Course-Header/CourseHeader";
+import CourseHeader from "@/components/course-header/CourseHeader";
+import StartCourse from "@/components/start-course/StartCourse";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -27,13 +28,81 @@ export default async function CourseDetailPage({ params }: IProps) {
 
     return (
         <main className="flex flex-col items-center">
-            <div className="w-full min-[910px]:max-w-[910px]">
-                <CourseHeader 
-                    title={course.title}
-                    courseUrl={course.courseUrl}
-                    description={course.description}
-                    imageUrl={course.imageUrl}
-                />
+            <div className="w-full min-[910px]:max-w-[910px] flex flex-col gap-4 px-4 my-6 lg:p-0 md:flex-row-reverse">
+
+                <div className="flex-1">
+                    <StartCourse 
+                        title={course.title}
+                        urlImage={course.imageUrl}
+                        idClass="1"
+                        idCourse={id}
+                    />
+                </div>
+                
+                <div className="flex-[2]">
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                    <CourseHeader 
+                        title={course.title}
+                        courseUrl={course.courseUrl}
+                        description={course.description}
+                        imageUrl={course.imageUrl}
+                    />
+                </div>
             </div>
         </main>
     );
