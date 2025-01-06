@@ -32,7 +32,7 @@ export default function StartCourse({ urlImage, idClass, idCourse, title }: ISta
                 </Link>
 
                 <Link
-                    className="w-full p-3 text-center bg-primary rounded"
+                    className="w-full p-3 text-center bg-primary rounded hover:no-underline"
                     href={"course/detail/{id}"}
                 >
                     Começar Curso
@@ -46,7 +46,7 @@ export default function StartCourse({ urlImage, idClass, idCourse, title }: ISta
                     <h1 className="text-xl font-extrabold">{title}</h1>
 
                     <Link
-                        className="w-full p-3 text-center bg-primary rounded"
+                        className="w-full p-3 text-center bg-primary rounded hover:no-underline"
                         href={"course/detail/{id}"}
                     >
                         Começar Curso

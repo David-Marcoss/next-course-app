@@ -1,3 +1,4 @@
+import ClassGroup from "@/components/course-content/components/ClassGroup";
 import CourseHeader from "@/components/course-header/CourseHeader";
 import StartCourse from "@/components/start-course/StartCourse";
 import { Metadata } from "next";
@@ -23,6 +24,26 @@ const course =  {
     🗨️ Discord`
 };
 
+
+const classes = [
+    {
+        title:"Curso de API Rest, Node e Typescript 3",
+        classUrl:"/cursos/wqgyug72738",
+    },
+    {
+        title:"Curso de API Rest, Node e Typescript 3",
+        classUrl:"/cursos/wqgyug72738",
+    },
+    {
+        title:"Curso de API Rest, Node e Typescript 3",
+        classUrl:"/cursos/wqgyug72738",
+    },
+    {
+        title:"Curso de API Rest, Node e Typescript 3",
+        classUrl:"/cursos/wqgyug72738",
+    },
+];
+
 export default async function CourseDetailPage({ params }: IProps) {
     const { id } = await params;
 
@@ -39,7 +60,7 @@ export default async function CourseDetailPage({ params }: IProps) {
                     />
                 </div>
                 
-                <div className="flex-[2]">
+                <div className="flex flex-col gap-4 flex-[2]">
                     <CourseHeader 
                         title={course.title}
                         courseUrl={course.courseUrl}
@@ -47,61 +68,14 @@ export default async function CourseDetailPage({ params }: IProps) {
                         imageUrl={course.imageUrl}
                     />
 
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
+                    <div className="border border-paper">
+                        <ClassGroup title="capitulo 1" classes={classes}/>
+                        <ClassGroup title="capitulo 2" classes={classes}/>
+                        <ClassGroup title="capitulo 3" classes={classes}/>
 
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
-                    <CourseHeader 
-                        title={course.title}
-                        courseUrl={course.courseUrl}
-                        description={course.description}
-                        imageUrl={course.imageUrl}
-                    />
+                    </div>
+
+                
                 </div>
             </div>
         </main>
