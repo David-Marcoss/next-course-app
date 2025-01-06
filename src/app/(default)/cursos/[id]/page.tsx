@@ -28,19 +28,19 @@ const course =  {
 const classes = [
     {
         title:"Curso de API Rest, Node e Typescript 3",
-        classUrl:"/cursos/wqgyug72738",
+        classUrl:"/player/12321/1232",
     },
     {
         title:"Curso de API Rest, Node e Typescript 3",
-        classUrl:"/cursos/wqgyug72738",
+        classUrl:"/player/12321/1232",
     },
     {
         title:"Curso de API Rest, Node e Typescript 3",
-        classUrl:"/cursos/wqgyug72738",
+        classUrl:"/player/12321/1232",
     },
     {
         title:"Curso de API Rest, Node e Typescript 3",
-        classUrl:"/cursos/wqgyug72738",
+        classUrl:"/player/12321/1232",
     },
 ];
 
