@@ -5,36 +5,25 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MdMenu, MdOutlineOpenInNew } from "react-icons/md";
 
-export default function Header(){
+export default function Header() {
     const [pageTitle, setPageTitle] = useState("Codando");
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    
+
     const currentPath = usePathname();
 
-    useEffect(()=>{
+    useEffect(() => {
         setPageTitle(document.title);
         setIsDrawerOpen(false);
-    },[currentPath]);
-    
-    // permite feichar drawer com tecla esc
-    useEffect(()=>{
-        const handleEscape = (e:KeyboardEvent) => {
-            if(e.key === "Escape") setIsDrawerOpen(false);
-        };
-        // adciona evento quando o componente é carregado
-        window.addEventListener("keydown", handleEscape);
-        // remove o evento quando o componente é destruido
-        return () => window.removeEventListener("keydown",handleEscape);
-    },[]);
+    }, [currentPath]);
 
     return (
         <>
-            <header className="bg-primary fixed top-0 left-0 right-0">
-                <nav className="flex items-center justify-start sm:justify-center p-5">
+            <header>
+                <nav className="w-full bg-primary fixed flex items-center justify-start sm:justify-center p-5">
                     {/* tabIndex: serve para bloquear a navegação dos itens com a tecla tab ao adicioar -1 */}
                     <ul className="flex items-center gap-2 sm:gap-4" tabIndex={isDrawerOpen ? -1 : undefined}>
                         <button className="block sm:hidden" onClick={() => setIsDrawerOpen(true)}>
-                            <MdMenu size={30}/>
+                            <MdMenu size={30} />
                         </button>
                         <li className="border-2 rounded-md p-1 ">
                             <Link href="/" className="hover:no-underline">CODANDO</Link>
@@ -48,7 +37,7 @@ export default function Header(){
                         <li className="hidden sm:block">
                             <Link className="flex items-center gap-1" href="https://blog.codarse.com/" target="_blank">
                                 Blog
-                                <MdOutlineOpenInNew/>
+                                <MdOutlineOpenInNew />
                             </Link>
                         </li>
 
