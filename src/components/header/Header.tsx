@@ -41,20 +41,19 @@ export default function Header() {
                             </Link>
                         </li>
 
-                        <h1 className="block sm:hidden">
+                        <h1 className="block sm:hidden line-clamp-1">
                             {pageTitle}
                         </h1>
                     </ul>
                 </nav>
-
-                {/* Drawer */}
+                
                 <div
                     tabIndex={!isDrawerOpen ? undefined : -1}
                     data-open={isDrawerOpen}
                     className={"bg-gradient-to-r from-background fixed top-0 right-0 bottom-0 left-0 transition-transform data-[open=false]:-translate-x-full sm:-translate-x-full"}
-                    onClick={() => setIsDrawerOpen(false)}
+                    onClick={() =>  setIsDrawerOpen(false)}
                 >
-                    <ul className="w-60 h-full bg-background flex flex-col gap-4 p-5" onClick={(e) => e.stopPropagation()}>
+                    <ul className="w-60 h-full bg-background flex flex-col gap-4 p-5" onClick={(e) =>  e.stopPropagation()}>
                         <li className={currentPath === "/" ? "border-b" : ""}>
                             <Link href="/">Página Inicial</Link>
                         </li>
@@ -71,9 +70,7 @@ export default function Header() {
                 </div>
             </header>
 
-            <div className="mt-20">
-
-            </div>
+            <div className="mt-24"/>
         </>
     );
 };
