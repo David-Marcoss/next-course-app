@@ -1,3 +1,4 @@
+import KeepWatching from "@/components/keep-watching/KeepWatching";
 import Section from "@/components/section/Section";
 import { Metadata } from "next";
 
@@ -59,6 +60,8 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center">
       <div className="max-w-full min-[910px]:max-w-[910]">
+
+        <KeepWatching />
         <Section title="Cursos em destaque" variant="h-list" items={courses}/>
       </div>
     </main>
