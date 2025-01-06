@@ -1,4 +1,5 @@
-import ClassGroup from "@/components/course-content/components/ClassGroup";
+
+import CourseContent from "@/components/course-content/CourseComponent";
 import CourseHeader from "@/components/course-header/CourseHeader";
 import StartCourse from "@/components/start-course/StartCourse";
 import { Metadata } from "next";
@@ -23,7 +24,6 @@ const course =  {
     📖 Repositório do projeto - https://github.com/lvsouza/youtube-cu...
     🗨️ Discord`
 };
-
 
 const classes = [
     {
@@ -60,7 +60,7 @@ export default async function CourseDetailPage({ params }: IProps) {
                     />
                 </div>
                 
-                <div className="flex flex-col gap-4 flex-[2]">
+                <div className="flex flex-col gap-14 flex-[2]">
                     <CourseHeader 
                         title={course.title}
                         courseUrl={course.courseUrl}
@@ -68,14 +68,11 @@ export default async function CourseDetailPage({ params }: IProps) {
                         imageUrl={course.imageUrl}
                     />
 
-                    <div className="border border-paper">
-                        <ClassGroup title="capitulo 1" classes={classes}/>
-                        <ClassGroup title="capitulo 2" classes={classes}/>
-                        <ClassGroup title="capitulo 3" classes={classes}/>
-
-                    </div>
-
-                
+                    <CourseContent classGroup={ [
+                        {title: "capitulo 1", classes},
+                        {title: "capitulo 2", classes},
+                        {title: "capitulo 3", classes},
+                    ]}/>
                 </div>
             </div>
         </main>

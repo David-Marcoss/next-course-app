@@ -1,33 +1,43 @@
-import { MdArrowRight } from "react-icons/md";
-import Class, { IClassProps } from "./Class";
+"use client";
 
-interface IClassGroup{
+import { useState } from "react";
+import Class, { IClassProps } from "./Class";
+import { SlArrowDown, SlArrowRight } from "react-icons/sl";
+
+export interface IClassGroup{
     title: string,
     classes: IClassProps[]
+    isListOpen?: boolean
 }
 
+export default function ClassGroup({classes, title, isListOpen=false}:IClassGroup){
+    const [listOpen,setListOpen] = useState(isListOpen);
 
-export default function ClassGroup({classes,title}:IClassGroup){
+    const handleClickList = () => {
+        setListOpen(!listOpen);
+    };
 
     return(
 
         <div className="flex flex-col">
             <button 
-                className="flex w-full p-4 bg-paper items-center border-b border-background"
+                className="flex w-full p-4 bg-paper items-center border-b border-background gap-2 active:opacity-80"
+                onClick={handleClickList}
             >
-                <MdArrowRight size={34}/>
+                { listOpen ? <SlArrowDown size={14}/> : <SlArrowRight size={14}/> }
                 <span className="text-lg"> {title}</span>
             </button>
-
-            <div className="flex flex-col">
-
+                      
+            <ol 
+                data-list-open = {listOpen}
+                className="flex flex-col data-[list-open=false]:hidden"
+            >
                 { classes.map((classItem, index) => (
-                    <Class key={index} {...classItem} />
+                    <li key={index}>
+                        <Class key={index} {...classItem} />
+                    </li>
                 ))}
-
-            </div>
-
+            </ol>
         </div>
     );
-
 }

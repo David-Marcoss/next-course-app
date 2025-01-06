@@ -18,12 +18,12 @@ export default function StartCourse({ urlImage, idClass, idCourse, title }: ISta
         <>
             <div
                 ref={ref}
-                className="flex flex-col gap-2 p-2 bg-paper md:fixed md:w-[298px]"
+                className="flex flex-col gap-2 px-3 py-5 rounded bg-paper md:fixed md:w-[298px]"
             >
                 <Link
                     data-view={inView}
                     style={{ backgroundImage: `url(${urlImage})` }}
-                    className="w-full h-full bg-cover bg-no-repeat bg-center aspect-video rounded"
+                    className="w-full h-full bg-cover bg-no-repeat bg-center aspect-video rounded mb-2"
                     href={`player/${idCourse}/${idClass}`}
                 >
                     <div className="w-full h-full flex items-center justify-center bg-background rounded opacity-0 transition-opacity hover:opacity-80">
@@ -32,7 +32,7 @@ export default function StartCourse({ urlImage, idClass, idCourse, title }: ISta
                 </Link>
 
                 <Link
-                    className="w-full p-3 text-center bg-primary rounded hover:no-underline"
+                    className="w-full py-2 text-center bg-primary rounded hover:no-underline"
                     href={"course/detail/{id}"}
                 >
                     Começar Curso
