@@ -1,3 +1,4 @@
+"use client";
 import PlayerClassGroup, { IPlayerClassGroup } from "./PlayerClassGroup";
 
 interface IPlayerContentProps {

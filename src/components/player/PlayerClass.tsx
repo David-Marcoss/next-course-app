@@ -1,16 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState } from "react";
 import { MdCheckCircle, MdPlayCircleOutline } from "react-icons/md";
 
 export interface IPlayerClassProps {
-    title: string
-    classUrl: string
-    classCompleted?: boolean
-    reproducing?: boolean
+  title: string;
+  classUrl: string;
+  classCompleted?: boolean;
+  reproducing?: boolean;
+
+  onPlay: () => void;
+  onCheck: () => void;
 }
 
-export default function PlayerClass({ title, classUrl, classCompleted = false, reproducing = false}: IPlayerClassProps) {
+export default function PlayerClass({ title, onPlay, onCheck, classCompleted = false, reproducing = false}: IPlayerClassProps) {
     const [classIsCompleted, setClassIsCompleted] = useState(classCompleted);
 
     return (
@@ -18,12 +22,13 @@ export default function PlayerClass({ title, classUrl, classCompleted = false, r
             <button
                 data-class-is-completed={classIsCompleted}
                 className="rounded-full data-[class-is-completed=false]:hover:bg-text data-[class-is-completed=false]:hover:w-[34px]"
-                onClick={() => setClassIsCompleted(!classIsCompleted)}
+                onClick={onCheck}
             >
                 {classIsCompleted ? (<MdCheckCircle size={34} color="green" /> ): (<MdPlayCircleOutline size={34} />)}
             </button>
             <button 
-                className="flex flex-col hover:no-underline"
+                className="flex flex-col"
+                onClick={onPlay}
             >
                 <span 
                     data-class-is-completed={classIsCompleted}
